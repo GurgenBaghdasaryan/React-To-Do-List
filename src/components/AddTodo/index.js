@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { StyledInput, StyledButton } from "./styles";
+
+const AddTodo = ({ onCreate, sortAsc, sortDes }) => {
 import { StyledInput } from "./styles";
 
 const AddTodo = ({ onCreate }) => {
@@ -23,6 +26,17 @@ const AddTodo = ({ onCreate }) => {
   return (
     <>
       <StyledInput value={value} onChange={handleInputChange} />
+      <StyledButton type="checkbox" onClick={() => setInput()}>
+        ADD
+      </StyledButton>
+      
+      <StyledButton type="checkbox" onClick={() => sortAsc()}>
+        Sort Ascending
+      </StyledButton>
+
+      <StyledButton type="checkbox" onClick={() => sortDes()}>
+        Sort Descending
+      </StyledButton>
       <button type="checkbox" onClick={() => setInput()}>
         {" "}
         ADD{" "}
