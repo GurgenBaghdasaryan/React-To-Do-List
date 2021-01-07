@@ -12,6 +12,7 @@ const AddTodo = ({ onCreate }) => {
     if (!value) {
       return;
     }
+    
     onCreate(value);
     clearInput();
   };

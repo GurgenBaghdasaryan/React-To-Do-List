@@ -1,14 +1,15 @@
 import React, { useState } from "react";
+import { AddTodo, TodoList } from "./components";
 import "./App.css";
-import { AddTodo, TodoList } from './components';
 
 const App = () => {
+  const [todo, setTodos] = useState(todos);
+
   const todos = [
     { id: 1, completed: false, title: "java" },
     { id: 2, completed: false, title: "node js" },
     { id: 3, completed: false, title: "react" },
   ];
-  const [todo, setTodos] = useState(todos);
 
   const deleteFrom = (e) => {
     const newArr = [...todo];
@@ -22,6 +23,7 @@ const App = () => {
       completed: false,
       title: value,
     };
+    
     const newArr = [...todo];
     newArr.push(newTodo);
     setTodos(newArr);
@@ -31,7 +33,7 @@ const App = () => {
     <div className="App">
       <h1>To-Do List</h1>
       <AddTodo todos={todo} onCreate={addedTodo} key={todo.id} />
-        <TodoList todos={todo} deleteFrom={deleteFrom} />
+      <TodoList todos={todo} deleteFrom={deleteFrom} />
     </div>
   );
 };
