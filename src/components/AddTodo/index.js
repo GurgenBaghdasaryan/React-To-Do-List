@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { StyledInput, StyledButton } from "./styles";
 
 const AddTodo = ({ onCreate, sortAsc, sortDes }) => {
+import { StyledInput } from "./styles";
+
+const AddTodo = ({ onCreate }) => {
   const [value, setValue] = useState("");
 
   const clearInput = () => {
@@ -34,6 +37,10 @@ const AddTodo = ({ onCreate, sortAsc, sortDes }) => {
       <StyledButton type="checkbox" onClick={() => sortDes()}>
         Sort Descending
       </StyledButton>
+      <button type="checkbox" onClick={() => setInput()}>
+        {" "}
+        ADD{" "}
+      </button>
     </>
   );
 };

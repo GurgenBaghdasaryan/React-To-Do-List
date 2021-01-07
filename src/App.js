@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { AddTodo, TodoList } from "./components";
 import "./App.css";
+import "./App.css";
+import { AddTodo, TodoList } from './components';
 
 const App = () => {
   const todos = [
     { id: 1, completed: false, title: "java" },
     { id: 2, completed: false, title: "node js" },  
+    { id: 2, completed: false, title: "node js" },
     { id: 3, completed: false, title: "react" },
   ];
   const [todo, setTodos] = useState(todos);
@@ -70,6 +73,11 @@ const App = () => {
         sortDes={handleDesSort}
       />
       <TodoList todos={todo} deleteFrom={deleteFrom} />
+  return (
+    <div className="App">
+      <h1>To-Do List</h1>
+      <AddTodo todos={todo} onCreate={addedTodo} key={todo.id} />
+        <TodoList todos={todo} deleteFrom={deleteFrom} />
     </div>
   );
 };
