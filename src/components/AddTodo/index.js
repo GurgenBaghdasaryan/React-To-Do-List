@@ -24,8 +24,7 @@ const AddTodo = ({ onCreate }) => {
     <>
       <StyledInput value={value} onChange={handleInputChange} />
       <button type="checkbox" onClick={() => setInput()}>
-        {" "}
-        ADD{" "}
+        ADD
       </button>
     </>
   );
